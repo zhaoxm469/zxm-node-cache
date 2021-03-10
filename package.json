@@ -1,6 +1,6 @@
 {
     "name": "zxm-node-cache",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "description": "node 缓存方法 ",
     "main": "index.js",
     "scripts": {
@@ -17,5 +17,10 @@
     },
     "devDependencies": {
         "@types/node": "^14.14.33"
-    }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-cache/node-cache.git"
+    },
+    "homepage": "https://github.com/node-cache/node-cache"
 }
