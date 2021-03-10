@@ -20,7 +20,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/node-cache/node-cache.git"
+        "url": "git+https://github.com/zhaoxm469/zxm-node-cache.git"
     },
-    "homepage": "https://github.com/node-cache/node-cache"
+    "homepage": "https://github.com/zhaoxm469/zxm-node-cache"
 }
