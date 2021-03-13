@@ -31,7 +31,7 @@ class Cache {
     async save(key: string, data = '', expirationTime = 60 * 60 * 24 * 30) {
         if (!key) throw Error('cache.save ： key为必填项')
 
-        console.log('cache.save 设置缓存：' + key)
+        // console.log('cache.save 设置缓存：' + key)
 
         // 判断是否存在缓存文件
         let isFileExis = isFileExisted(this.cacheFilePath)
@@ -67,7 +67,7 @@ class Cache {
     // 获取缓存
     get(key: string) {
 
-        console.log('cache.get 读取缓存：' + key)
+        // console.log('cache.get 读取缓存：' + key)
 
         // 判断是否存在缓存文件
         let isFileExis = isFileExisted(this.cacheFilePath);
@@ -86,7 +86,7 @@ class Cache {
         // 如果当前时间，大于过期时间，代表缓存过期
         if (dayjs().valueOf() > expirationTime) {
             delete cacheFiledata[key];
-            console.log('cache.get : 缓存过期')
+            // console.log('cache.get : 缓存过期')
             return '';
         }
 
@@ -106,7 +106,7 @@ class Cache {
 
         delete cacheFiledata[key];
 
-        console.log('cache.clear : 单个缓存清除成功')
+        // console.log('cache.clear : 单个缓存清除成功')
 
     }
     // 清空全部缓存
@@ -114,7 +114,7 @@ class Cache {
         let isFileExis = isFileExisted(this.cacheFilePath);
         if (!isFileExis) return;
         fs.unlinkSync(this.cacheFilePath)
-        console.log('cache.clearAll : 缓存全部清除成功')
+        // console.log('cache.clearAll : 缓存全部清除成功')
     }
 
 }

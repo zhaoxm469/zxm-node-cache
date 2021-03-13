@@ -72,7 +72,6 @@ var Cache = /** @class */ (function () {
             return __generator(this, function (_b) {
                 if (!key)
                     throw Error('cache.save ： key为必填项');
-                console.log('cache.save 设置缓存：' + key);
                 isFileExis = isFileExisted(this.cacheFilePath);
                 saveData = {
                     value: data,
@@ -108,7 +107,7 @@ var Cache = /** @class */ (function () {
     };
     // 获取缓存
     Cache.prototype.get = function (key) {
-        console.log('cache.get 读取缓存：' + key);
+        // console.log('cache.get 读取缓存：' + key)
         // 判断是否存在缓存文件
         var isFileExis = isFileExisted(this.cacheFilePath);
         // 不存在直接返回空字符串
@@ -123,7 +122,7 @@ var Cache = /** @class */ (function () {
         // 如果当前时间，大于过期时间，代表缓存过期
         if (dayjs_1.default().valueOf() > expirationTime) {
             delete cacheFiledata[key];
-            console.log('cache.get : 缓存过期');
+            // console.log('cache.get : 缓存过期')
             return '';
         }
         return value;
@@ -138,7 +137,7 @@ var Cache = /** @class */ (function () {
         // 如果存在，读取缓存文件
         var cacheFiledata = JSON.parse(fs_1.default.readFileSync(this.cacheFilePath, 'utf-8'));
         delete cacheFiledata[key];
-        console.log('cache.clear : 单个缓存清除成功');
+        // console.log('cache.clear : 单个缓存清除成功')
     };
     // 清空全部缓存
     Cache.prototype.clearAll = function () {
@@ -146,7 +145,7 @@ var Cache = /** @class */ (function () {
         if (!isFileExis)
             return;
         fs_1.default.unlinkSync(this.cacheFilePath);
-        console.log('cache.clearAll : 缓存全部清除成功');
+        // console.log('cache.clearAll : 缓存全部清除成功')
     };
     return Cache;
 }());
